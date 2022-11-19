@@ -1,0 +1,50 @@
+version: "3"
+services:
+  benchmark:
+    command: node index.js
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    networks:
+      - document_db
+
+  postgres:
+    restart: always
+    image: postgres:15
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - PGUSER=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_document_db:/var/lib/postgresql/data/
+      - ./dump:/home/
+    networks:
+      - document_db
+
+  mongo:
+    restart: always
+    image: mongo:5.0.3
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: qwe
+    ports:
+      - "27017:27017"
+    volumes: 
+      - ./dump:/home/
+      - mongo_data:/data/db
+    networks:
+      - document_db
+
+volumes:
+  postgres_document_db:
+  mongo_data:
+  app_build:
+  app_deps:
+
+networks:
+  document_db:  
