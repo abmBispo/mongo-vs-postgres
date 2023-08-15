@@ -2,8 +2,8 @@ import mongo from "./mongo.js";
 import scalarMongo from "./benchmarks/mongo/scalars.js";
 
 try {
-  console.log();
-  await scalarMongo(mongo);
+  console.log("teste");
+  scalarMongo(mongo);
 } finally {
-  await mongo.close();
+  mongo.close();
 }

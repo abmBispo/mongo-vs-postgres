@@ -1,17 +1,5 @@
 version: "3"
 services:
-  benchmark:
-    command: node index.js
-    build:
-      context: .
-      dockerfile: Dockerfile
-    depends_on:
-      - postgres
-    volumes:
-      - .:/app
-    networks:
-      - document_db
-
   postgres:
     restart: always
     image: postgres:15
@@ -43,8 +31,6 @@ services:
 volumes:
   postgres_document_db:
   mongo_data:
-  app_build:
-  app_deps:
 
 networks:
   document_db:  

@@ -1,16 +1,22 @@
 {
-  "name": "node_mongo_benchmark",
+  "name": "mongo_vs_postgres",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "npx tsc && node dist/seeds.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "@abmBispo",
   "type": "module",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^8.0.2",
     "mongodb": "4.11"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts-strictest-esm": "^18.12.1",
+    "typescript": "^5.1.6"
   }
 }

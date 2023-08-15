@@ -1,7 +1,5 @@
 # Wildcards
 
-
-
 A seguinte pesquisa
 
 ```sql
@@ -386,13 +384,11 @@ EXPLAIN IXSCAN:
 E os resultados são impressionantes, com uma resposta abaixo de 1ms, como o Postgres.
 
 A conclusão neste caso é que pesquisas REGEX-like, ou no caso do Postgres com wildcards, são eficientes em apenas alguns casos
-no Mongo, já que existe essas limitações quanto ao formato da pesquisa para utilização do index. Então se é necessário fazer pesquisas
-simples com wildcards, considerando case-insensitive, é mais interessante a utilização de postgres como base primária schemaless.
+no Mongo, já que existe essas limitações quanto ao formato da pesquisa para utilização do index. Então se é necessário fazer pesquisas simples com wildcards, considerando case-insensitive, é mais interessante a utilização de postgres como base primária schemaless.
 
 Alguém poderia sugerir a utilização de `mapReduce`s para transformar as colunas indexáveis em trigramas e, assim, indexá-las como
 texto, para tentar emular o comportamento do Postgres `pg_trgm`. E faz sentido a sugestão, com certeza se Mongo já é minha base
-primária, eu optaria por uma solução neste sentido, assim como acredito que seria indeal em muitos caso um pre-processamento parecido
-para algumas indexações no Postgres
+primária, eu optaria por uma solução neste sentido, assim como acredito que seria indeal em muitos caso um pre-processamento parecido para algumas indexações no Postgres
 
 Fontes:
 Bitmap Index Scan VS Bitmap Heap Scan: https://dba.stackexchange.com/questions/119386/understanding-bitmap-heap-scan-and-bitmap-index-scan
