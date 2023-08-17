@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "npx tsc && node dist/seeds.js"
+    "seed": "npx tsc && node dist/seeds/seeds.js"
   },
   "keywords": [],
   "author": "@abmBispo",

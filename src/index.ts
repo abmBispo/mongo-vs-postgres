@@ -1,4 +1,4 @@
-import mongo from "./mongo.js";
+import mongo from "./clients/mongo.js";
 import scalarMongo from "./benchmarks/mongo/scalars.js";
 
 try {
