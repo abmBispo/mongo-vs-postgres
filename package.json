@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx tsc && node dist/index.js",
     "seed": "npx tsc && node dist/seeds/seeds.js"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@tsconfig/node-lts-strictest-esm": "^18.12.1",
+    "benny": "^3.7.1",
     "typescript": "^5.1.6"
   }
 }
